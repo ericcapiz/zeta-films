@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import ResultCard from './ResultCard';
+import dotenv from 'dotenv';
 
 const Add = () => {
+    dotenv.config();
     const [query,
         setQuery] = useState('');
     const [results,
