@@ -18,7 +18,7 @@ const Watched = () => {
                 ))}
             </div>
             ) : (
-                <h2 className="no-movies">There are no moives in your list. Search for your favorite movies and add them to your list!</h2>
+                <h2 className="no-movies">Search for movies, and once they're marked "watched" they will be added here!</h2>
             )}
         </div>
     </div>

@@ -8,7 +8,7 @@ const WatchList = () => {
         <div className="movie-page">
             <div className="container">
                 <div className="header">
-                    <h1 className="heading">My Watchlist:</h1>
+                    <h1 className="heading">Saved Movies:</h1>
                     <span className="count-pill">{watchlist.length}{watchlist.length === 1? ' Movie' : ' Movies'}</span>
                 </div>
                 {watchlist.length > 0 ? (
@@ -18,7 +18,7 @@ const WatchList = () => {
                     ))}
                 </div>
                 ) : (
-                    <h2 className="no-movies">There are no moives in your list. Search for your favorite movies and add them to your list!</h2>
+                    <h2 className="no-movies">Search for your favorite movies and add them to your saved movies!</h2>
                 )}
             </div>
         </div>
