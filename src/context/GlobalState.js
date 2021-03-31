@@ -8,6 +8,7 @@ const initialState = {
     
     watchlist: localStorage.getItem('watchlist') ? JSON.parse(localStorage.getItem('watchlist')) : [],
     watched: localStorage.getItem('watched') ? JSON.parse(localStorage.getItem('watched')) : [],
+    details: localStorage.getItem('details') ? JSON.parse(localStorage.getItem('details')) : [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -45,6 +46,10 @@ export const GlobalProvider = (props) => {
         dispatch({type: "REMOVE_FROM_WATCHED", payload: id})
     }
 
+    const getDetail = (id) => {
+        dispatch({type:"LOAD_DETAIL", payload: id})
+    }
+
     return (
     
     //component that has access to the state and actions; 
@@ -57,6 +62,7 @@ export const GlobalProvider = (props) => {
             addMovieToWatched,
             moveToWatchlist,
             removeFromWatched,
+            getDetail,
         }}>
             {props.children}
         </GlobalContext.Provider>

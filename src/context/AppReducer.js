@@ -29,6 +29,14 @@ const AppReducer =(state, action)=>{
                 watched: state.watched.filter(movie => movie.id !== action.payload)
             }
         }
+        case "GET_DETAIL":{
+            return{
+                ...state,
+                details: [action.payload, ...state.details]
+            }
+            
+
+        }
         default:
             return state;
     }

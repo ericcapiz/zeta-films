@@ -1,9 +1,11 @@
 import React,{useContext} from 'react';
 import {GlobalContext} from '../context/GlobalState';
 import MovieCard from './MovieCard';
+import { Link } from "react-router-dom";
 
 const WatchList = () => {
     const {watchlist} = useContext(GlobalContext);
+
     return (
         <div className="movie-page">
             <div className="container">
@@ -14,9 +16,12 @@ const WatchList = () => {
                 {watchlist.length > 0 ? (
                 <div className="movie-grid">
                     {watchlist.map((movie) => (
+                        <Link to={`/movie/${watchlist.id}`}>
                         <MovieCard movie={movie} type="watchlist" />
+                        </Link>
                     ))}
                 </div>
+                
                 ) : (
                     <h2 className="no-movies">Search for your favorite movies and add them to your saved movies!</h2>
                 )}
