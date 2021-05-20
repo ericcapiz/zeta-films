@@ -32,7 +32,9 @@ const Add = () => {
                             type="text"
                             placeholder="Search for a movie..."
                             value={query}
-                            onChange={onChange}/>
+                            onChange={onChange}
+                            autoComplete="on"
+                            />
                     </div>
                     {results.length > 0 && (
                         <ul className="results">
